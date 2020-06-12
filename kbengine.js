@@ -2987,7 +2987,7 @@ KBEngine.KBEngineApp = function(kbengineArgs)
 	// 服务端分配的baseapp地址
 	this.baseappIP = "";
 	this.baseappPort = 0;
-
+	this.baseUdpPort = 0;
 	this.currMsgID = 0;
 	this.currMsgCount = 0;
 	this.currMsgLen = 0;
@@ -4199,6 +4199,7 @@ KBEngine.KBEngineApp = function(kbengineArgs)
 		KBEngine.app.username = accountName;
 		KBEngine.app.baseappIp = args.readString();
 		KBEngine.app.baseappPort = args.readUint16();
+		KBEngine.app.baseUdpPort = args.readUint16();
 		KBEngine.app.serverdatas = args.readBlob();
 		
 		KBEngine.INFO_MSG("KBEngineApp::Client_onLoginSuccessfully: accountName(" + accountName + "), addr(" + 
